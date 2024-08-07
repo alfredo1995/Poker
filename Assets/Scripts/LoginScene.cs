@@ -13,5 +13,11 @@ namespace Project.Scenes
         {
             NetworkClient.getInstance.RegisterUser(username.text, password.text);
         }
+
+        public void LoginUser()
+        {
+            NetworkClient.getInstance.LogUser(username.text, password.text);
+        }
     }
+
 }

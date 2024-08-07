@@ -39,6 +39,22 @@ namespace Project.Networking
                 Debug.Log("Registration falied : " + error.Message);
             });
         }
+
+        public void LogUser(string username, string password)
+        {
+            PlayerIO.Authenticate(gameId, "public", new Dictionary<string, string>
+            {
+                {"register", "true"},
+                {"username", username},
+                {"password", password}
+            }, null, delegate (Client client)
+            {
+                Debug.Log("Registration successfull");
+            }, delegate (PlayerIOError error)
+            {
+                Debug.Log("Registration falied : " + error.Message);
+            });
+        }
     }
 
 }
