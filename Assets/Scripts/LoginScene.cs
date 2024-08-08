@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Project.Networking;
@@ -9,7 +9,8 @@ namespace Project.Scenes
     public class LoginScene : MonoBehaviour
     {
         [SerializeField] TMP_InputField username, password;
-        public void RegisterUser() 
+        
+        public void RegisterUser()
         {
             NetworkClient.getInstance.RegisterUser(username.text, password.text);
         }
@@ -19,5 +20,4 @@ namespace Project.Scenes
             NetworkClient.getInstance.LogUser(username.text, password.text);
         }
     }
-
 }
